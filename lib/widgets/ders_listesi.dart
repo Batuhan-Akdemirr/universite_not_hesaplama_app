@@ -18,7 +18,7 @@ class DersListesi extends StatelessWidget {
               //Kaydırınca silinmesi falan
               return Dismissible(
                 key:
-                    UniqueKey(), // Listeye eklenen her bir elemana birbirinden farklı key ler veriyor
+                    UniqueKey(), 
                 onDismissed: (a) {
                   onElemanCikarildi(index);
                 },

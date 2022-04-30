@@ -27,7 +27,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset:
-            false, // Yatayda kalveyeyle çakışmayı falan önlüyor.
+            false, 
         appBar: AppBar(
           backgroundColor: ColorConstatnt.appBarRenk,
           elevation: 0,
@@ -56,9 +56,9 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
                 ),
               ],
             ),
-            // eXPANDED İLE SARMALAMAK LAZIM YOKSA AHAT ALIRIZ
+            
             Expanded(child: DersListesi(
-              // Aşağıdan yukarıya bilgi vermiş olduk.SeState kullanarak ortalamaGosterPage Build metodu tekrar çalıştı.
+            
               onElemanCikarildi: (index) {
                 DataHelper.tumEklenenDersler.removeAt(index);
                 setState(() {});
@@ -107,7 +107,7 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
                 ),
               ),
               IconButton(
-                // onPressed olduğu için metodun sonunda () kullanmadık
+               
                 onPressed: _dersEkleveOrtalamaHesapla,
                 icon: const Icon(Icons.arrow_forward_ios_sharp),
                 color: ColorConstatnt.anaRenk,
@@ -152,14 +152,14 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
   void _dersEkleveOrtalamaHesapla() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!
-          .save(); // bunu diyelim ki verilen kaydolsun ve değeri kullanabilelim
+          .save(); 
       var eklenecekDers = Ders(
           ad: girilenDersAdi,
           harfDegeri: secilenHarfDegeri,
           krediDegeri: secilenKrediDegeri);
       DataHelper.dersEkle(eklenecekDers);
       setState(
-          () {}); // set state dememiz lazım ki build metodu çalışsın ve değişiklikler görünsün
+          () {});
     }
   }
 }
